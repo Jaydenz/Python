@@ -2,6 +2,12 @@ import time, requests
 from vultrBase import VultrError
 import json
 import vultrBase
+
+APK_KEY = '3L5RSCUDCPWDYA7JEGPVZVIKZQ6TK2OMB2IA'
+Machine_List = {}
+
+
+
 class vultr_Request(Vultr):
     def request(self, path, params={}, method='GET'):
         _start = time.time()
@@ -60,7 +66,7 @@ class vultr_Request(Vultr):
         if not resp.text:
             return json.loads('{}')
         else:
-        return resp.json()
+            return resp.json()
 
     def account(self):
 

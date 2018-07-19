@@ -2,10 +2,18 @@ import json
 import requests
 
 API_BASE_ADDR = 'https://api.vultr.com'
+API_KEY = 'CDWQ2PYLN4IC3IOFCFLSHCJ74E4DSFHM3FDA'
 
 
+# class VultrError(RuntimeError):
+#     pass
+
+# class Vultr(object):
+#     def __init__(self, apikey, requestpath):
+#         self.apikey = apikey
+#         self.requestpath = requestpath
+    
 def http_response_code(code):
-
     state = {
         200:'Function successfully executed.',
         400:'Invalid API location. Check the URL that you are using.',
@@ -19,34 +27,24 @@ def http_response_code(code):
 
 
 
-def os_list(self):
-    """
-    /v1/os/list
-    GET - public
-    Retrieve a list of available operating systems. If the 'windows' flag
-    is true, a Windows licenses will be included with the instance, which
-    will increase the cost.
+def list_server(self):
+    
 
-    Example Request:
-    GET https://api.vultr.com/v1/os/list
-    Example Response:
-    {
-        "127": {
-            "OSID": "127",
-            "name": "CentOS 6 x64",
-            "arch": "x64",
-            "family": "centos",
-            "windows": false
-        },
-        "148": {
-            "OSID": "148",
-            "name": "Ubuntu 12.04 i386",
-            "arch": "i386",
-            "family": "ubuntu",
-            "windows": false
-        }
-    }
-    Parameters:
-    No Parameters
-    """
-    return self.request('/v1/os/list')
+
+
+
+def list_snapshot:
+    curl -H 'API-Key: YOURKEY' https://api.vultr.com/v1/snapshot/list
+
+def create_snapshot:
+    curl -H 'API-Key: YOURKEY' https://api.vultr.com/v1/snapshot/create --data 'SUBID=1312965'
+    '''成功返回{
+                "SNAPSHOTID": "544e52f31c706"
+            }'''
+def destroy_snapshot:
+    curl -H 'API-Key: YOURKEY' https://api.vultr.com/v1/snapshot/destroy --data 'SNAPSHOTID=5359435d28b9a'
+
+
+
+if __name__ == "__main__":
+    
